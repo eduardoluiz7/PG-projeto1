@@ -1,6 +1,5 @@
 package projetopg.eduardo;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -13,7 +12,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -26,13 +24,16 @@ import javax.swing.border.EmptyBorder;
 
 public class TelaCurvas extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JPanel areaG;
-	double t;
+	double t=0.001;
 	private int numPontos=0;
 	private JTextField valorDoT;
 	public ArrayList<Point> pontos = new ArrayList<Point>();
-
+	public CurvasDeBezier curva;
 	/**
 	 * Launch the application.
 	 */
@@ -79,6 +80,7 @@ public class TelaCurvas extends JFrame {
 		panel.add(valorDoT);
 		valorDoT.setColumns(10);
 		valorDoT.setText("0.001");
+		valorDoT.setToolTipText("Insira o valor de t e tecle enter");
 		
 		JLabel lblValorDeT = new JLabel("Valor de t:");
 		lblValorDeT.setBounds(34, 188, 75, 16);
@@ -144,6 +146,20 @@ public class TelaCurvas extends JFrame {
                         
                     }
                 });
-	}
+		btnDesenharCurva.addActionListener(
+                new ActionListener() {
 
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                    	if(numPontos==0) {
+                    		JOptionPane.showMessageDialog(null, "Insira os pontos de controle!");
+                    	}else {
+                    		curva = new CurvasDeBezier(areaG.getGraphics(), pontos, t);
+                    		curva.desenhaCurva();
+                    	}
+                    }        
+                }
+        );
+
+	}
 }

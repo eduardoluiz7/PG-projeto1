@@ -1,6 +1,7 @@
 package projetopg.eduardo;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -32,11 +33,18 @@ public class TelaGrafico extends JFrame {
 	 */
 	public TelaGrafico() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 664, 607);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(0, 0, 646, 560);
+		panel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.add(panel);
+		panel.setLayout(new BorderLayout(0, 0));
+		panel.setBackground(Color.WHITE);
 	}
 
 }
