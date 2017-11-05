@@ -22,11 +22,11 @@ import javax.swing.JTextPane;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 
+/**
+ * Tela de desenho da curva de Bézier
+ */
 public class TelaCurvas extends JFrame {
-
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	double t=0.001;

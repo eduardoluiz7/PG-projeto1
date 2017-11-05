@@ -36,10 +36,7 @@ public class Grafico extends javax.swing.JFrame{
 				PlotOrientation.VERTICAL, false, false, false);
 
 		ChartPanel cp = new ChartPanel(chart) {
-            /**
-			 * 
-			 */
-			private static final long serialVersionUID = 1L;
+		
 
 			@Override
             public Dimension getPreferredSize() {

@@ -89,6 +89,7 @@ public class CurvasDeBezier {
 		System.out.println("" + norma);
 		return norma;
 	}
+	
 	/**
 	 * gera os vetores deltas para o calculo da derivada
 	 * @param pontos
@@ -103,6 +104,7 @@ public class CurvasDeBezier {
 		System.out.println("Deltas derivada: " +deltas);
 		return deltas;
 	}
+	
 	/**
 	 * Calcula o b por meio de Casteljau
 	 * @param s
@@ -113,6 +115,7 @@ public class CurvasDeBezier {
 	private double deCasteljau(double s, int n, int k) {
 		return ((fatorial(n)/(fatorial(k)*fatorial(n-k)))*Math.pow(s, k)* Math.pow(1-s, n-k));
 	}
+	
 	/**
 	 * calcula o fatorial 
 	 * @param d
@@ -129,6 +132,7 @@ public class CurvasDeBezier {
             return fatorial;
         }
 	}
+	
 	/**
 	 * gera cor aleatoria
 	 * (usado no desenho da curva)
