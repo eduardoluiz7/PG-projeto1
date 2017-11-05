@@ -33,7 +33,7 @@ public class TelaCurvas extends JFrame {
 	private int numPontos=0;
 	private JTextField valorDoT;
 	public ArrayList<Point> pontos = new ArrayList<Point>();
-	public CurvasDeBezier curva;
+	public static CurvasDeBezier curva;
 	/**
 	 * Launch the application.
 	 */
@@ -165,5 +165,8 @@ public class TelaCurvas extends JFrame {
                 }
         );
 
+	}
+	public static CurvasDeBezier getCurva() {
+		return curva;
 	}
 }
