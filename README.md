@@ -12,3 +12,8 @@ comprimento da curva inteira. O gráfico que deve aparecer na segunda janela
 é a norma acumulada dos vetores em função dos valores de t dividida pelo
 comprimento total (isto como ordenada, e o intervalo [0,1] como abscissa).
 
+O usuário desenha os pontos de controle através do mouse, clica no botão "desenhar curva" e o sistema 
+faz o desenho.
+O botão "apagar" limpa o quadro de desenho
+O usuário pode alterar o valor de t no intervalo [0,1] digitando na caixa de texto e teclando enter
+
