@@ -48,8 +48,24 @@ public class CurvasDeBezier {
 	public void limpaPontos() {
 		this.pontos = new ArrayList<Point>();
 	}
-	public void derivadaDeBezier() {
-		
+	public void derivadaDeBezier(double t) {
+		double x=0; double y=0;
+		ArrayList<Point> deltas=geraDeltas(pontos);
+		for (int i = 0; i <deltas.size() ; i++) {
+			double b = deCasteljau(t, deltas.size()-1, i);
+			x+=deltas.get(i).getX() * b;
+			y+=deltas.get(i).getY() * b;
+		}
+		x=y=0;
+	}
+	private ArrayList<Point> geraDeltas(ArrayList<Point> pontos) {
+		ArrayList<Point> deltas = new ArrayList<Point>();
+		for (int i = 0; i+1 < pontos.size(); i++) {
+			Point p = new Point((int)(pontos.get(i+1).getX() - pontos.get(i).getX()), (int) (pontos.get(i+1).getY() - pontos.get(i).getY()));
+			deltas.add(p);
+		}
+		System.out.println("Deltas derivada: " +deltas);
+		return deltas;
 	}
 	
 	private double deCasteljau(double s, int n, int k) {
@@ -90,6 +106,9 @@ public class CurvasDeBezier {
 			break;
 		}
 		return cor;
+	}
+	public double calculaNorma(Point vetor) {
+		return Math.sqrt(Math.pow(vetor.getX(),2) + Math.pow(vetor.getY(),2));
 	}
 	
 }

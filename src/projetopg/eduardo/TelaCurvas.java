@@ -146,6 +146,7 @@ public class TelaCurvas extends JFrame {
                         
                     }
                 });
+		//acoes para o botao desenhar curva
 		btnDesenharCurva.addActionListener(
                 new ActionListener() {
 
@@ -156,6 +157,9 @@ public class TelaCurvas extends JFrame {
                     	}else {
                     		curva = new CurvasDeBezier(areaG.getGraphics(), pontos, t);
                     		curva.desenhaCurva();
+                    		curva.derivadaDeBezier(t);
+                    		Grafico gc = new Grafico();
+                    		gc.setVisible(true);
                     	}
                     }        
                 }
