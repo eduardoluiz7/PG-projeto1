@@ -2,7 +2,6 @@ Projeto 1 da disciplina de Processamento Gráfico 2017.2 - CIN UFPE
 
 1.16 Parametrização unitária X Comprimento do arco em curvas de Bézier:
 
-
 Especificação:
 O sistema desenha a curva numa janela e numa outra desenha o gráfico
 da função de parametrização de comprimento do arco aproximado da curva de
@@ -27,5 +26,7 @@ O Gráfico gera a norma acumulada de vetores obtidos através da derivada da curva
 para os seguintes valores de t: 0.001, 0.05, 0.1, 0.5, 0.8, 0.9 e 1.
 
 Para ver com detalhes se aplica o zoom usando o mouse, também é possível redimensionar a janela do gráfico.
+
+Para excluir um ponto o usuário clica no botão "exluir ponto" e depois clica no ponto a ser excluido
 
 
