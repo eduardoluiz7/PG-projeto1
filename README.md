@@ -14,6 +14,8 @@ comprimento total (isto como ordenada, e o intervalo [0,1] como abscissa).
 
 O usuário desenha os pontos de controle através do mouse, clica no botão "desenhar curva" e o sistema 
 faz o desenho.
-/nO botão "apagar" limpa o quadro de desenho
-/nO usuário pode alterar o valor de t no intervalo [0,1] digitando na caixa de texto e teclando enter
+
+O botão "apagar" limpa o quadro de desenho
+
+O usuário pode alterar o valor de t no intervalo [0,1] digitando na caixa de texto e teclando enter
 
