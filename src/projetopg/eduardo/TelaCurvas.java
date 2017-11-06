@@ -196,11 +196,15 @@ public class TelaCurvas extends JFrame {
 	**/
 	}
 	
+	public static CurvasDeBezier getCurva() {
+		return curva;
+	}
+	
 	/**
 	 * Metodo que apaga ponto mais proximo ao que foi clicado pelo usuario
 	 * @param ponto
 	 */
-	
+	/*
 	private void apagaPontos(Point ponto) {
 		double menorDistancia=0;
 		int indiceMenor = 0;
@@ -212,8 +216,5 @@ public class TelaCurvas extends JFrame {
 		}
 		pontos.remove(indiceMenor);
 	}
-	
-	public static CurvasDeBezier getCurva() {
-		return curva;
-	}
+	**/	
 }
