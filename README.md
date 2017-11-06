@@ -23,7 +23,7 @@ O botão "apagar" limpa o quadro de desenho
 O usuário pode alterar o valor de t no intervalo [0,1] digitando na caixa de texto e teclando enter
 
 O Gráfico gera a norma acumulada de vetores obtidos através da derivada da curva criada 
-para os seguintes valores de t: 0.001, 0.05, 0.1, 0.5, 0.8, 0.9 e 1.
+para os seguintes valores de t: 0.001, 0.05, 0.08, 0.1, 0.2, 0.3, 0.4, 0.5 e 1.
 Ele mostra que quando menor o t, maior o valor da norma acumulada.
 
 Para ver com detalhes se aplica o zoom usando o mouse, também é possível redimensionar a janela do gráfico.
