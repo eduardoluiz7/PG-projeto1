@@ -24,19 +24,25 @@ public class Grafico extends javax.swing.JFrame{
 		//calcula e adiciona valores da norma acumulada dos vetores 
 		//resultantes da derivada ao gráfico para cada valor de t
 		grafico.add(0.001, TelaCurvas.getCurva().derivadaDeBezier(0.001));
-		grafico.add(0.005, TelaCurvas.getCurva().derivadaDeBezier(0.05));
-		grafico.add(0.01, TelaCurvas.getCurva().derivadaDeBezier(0.1));
-		grafico.add(0.05, TelaCurvas.getCurva().derivadaDeBezier(0.5));
+		grafico.add(0.05, TelaCurvas.getCurva().derivadaDeBezier(0.05));
+		grafico.add(0.08, TelaCurvas.getCurva().derivadaDeBezier(0.08));
+		grafico.add(0.1, TelaCurvas.getCurva().derivadaDeBezier(0.1));
+		grafico.add(0.2, TelaCurvas.getCurva().derivadaDeBezier(0.2));
+		grafico.add(0.3, TelaCurvas.getCurva().derivadaDeBezier(0.3));
+		grafico.add(0.4, TelaCurvas.getCurva().derivadaDeBezier(0.4));
+		grafico.add(0.5, TelaCurvas.getCurva().derivadaDeBezier(0.5));
+		grafico.add(1, TelaCurvas.getCurva().derivadaDeBezier(1));
+		
+		/*
 		grafico.add(0.8, TelaCurvas.getCurva().derivadaDeBezier(0.8));
 		grafico.add(0.9, TelaCurvas.getCurva().derivadaDeBezier(0.9));
-		grafico.add(1, TelaCurvas.getCurva().derivadaDeBezier(1));
+		**/
 		
 		dataxy = new XYSeriesCollection(grafico);
 		chart = ChartFactory.createXYLineChart("Norma acumulada em função de t", "Valores de t", "Norma acumulada", dataxy, 
 				PlotOrientation.VERTICAL, false, false, false);
 
 		ChartPanel cp = new ChartPanel(chart) {
-		
 
 			/**
 			 * 
@@ -45,13 +51,16 @@ public class Grafico extends javax.swing.JFrame{
 
 			@Override
             public Dimension getPreferredSize() {
-                return new Dimension(450, 300);
+                return new Dimension(700, 700);
             }
         };
+
+        cp.setMouseWheelEnabled(true);
         cp.setMouseZoomable(true);
         add(cp);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         pack();
+        setTitle("Gráfico");
 		
 	}
 	
