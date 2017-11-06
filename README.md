@@ -27,6 +27,6 @@ para os seguintes valores de t: 0.001, 0.05, 0.1, 0.5, 0.8, 0.9 e 1.
 
 Para ver com detalhes se aplica o zoom usando o mouse, também é possível redimensionar a janela do gráfico.
 
-Para excluir um ponto o usuário clica no botão "exluir ponto" e depois clica no ponto a ser excluido
+Para excluir um ponto o usuário clica no botão "exluir ponto" e depois clica no ponto a ser excluido (ainda não implementado)
 
 
