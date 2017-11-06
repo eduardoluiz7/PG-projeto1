@@ -30,4 +30,4 @@ Para ver com detalhes se aplica o zoom usando o mouse, também é possível redimen
 
 Para excluir um ponto o usuário clica no botão "exluir ponto" e depois clica no ponto a ser excluido (ainda não implementado)
 
-
+Para criar o gráfico a biblioteca JFreeChart foi utilizada.
