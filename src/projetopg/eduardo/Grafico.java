@@ -38,6 +38,11 @@ public class Grafico extends javax.swing.JFrame{
 		ChartPanel cp = new ChartPanel(chart) {
 		
 
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
 			@Override
             public Dimension getPreferredSize() {
                 return new Dimension(450, 300);

@@ -34,6 +34,8 @@ public class TelaCurvas extends JFrame {
 	private JTextField valorDoT;
 	public ArrayList<Point> pontos = new ArrayList<Point>();
 	public static CurvasDeBezier curva;
+	JPanel areaG;
+	boolean permissao = true;
 	/**
 	 * Launch the application.
 	 */
@@ -68,11 +70,11 @@ public class TelaCurvas extends JFrame {
 		panel.setLayout(null);
 		
 		JButton btnDesenharCurva = new JButton("Desenhar Curva");
-		btnDesenharCurva.setBounds(32, 56, 138, 34);
+		btnDesenharCurva.setBounds(32, 66, 138, 34);
 		panel.add(btnDesenharCurva);
 		
 		JButton btnApagar = new JButton("Apagar");
-		btnApagar.setBounds(32, 123, 138, 34);
+		btnApagar.setBounds(32, 127, 138, 30);
 		panel.add(btnApagar);
 		
 		valorDoT = new JTextField();
@@ -91,9 +93,17 @@ public class TelaCurvas extends JFrame {
 		textPane.setBounds(12, 244, 177, 378);
 		panel.add(textPane);
 		
+		JButton btapagaPonto = new JButton("Excluir Ponto");
+		btapagaPonto.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btapagaPonto.setBounds(32, 13, 138, 30);
+		panel.add(btapagaPonto);
+		
 		
 		//painel de desenho e suas acoes
-		JPanel areaG = new JPanel();
+		areaG = new JPanel();
 		areaG.setLayout(null);
 		areaG.setBorder(new EmptyBorder(5, 20, 5, 5));
 		areaG.setBounds(202, 0, 757, 635);
@@ -102,15 +112,16 @@ public class TelaCurvas extends JFrame {
 		areaG.addMouseListener(new MouseAdapter() {//acoes ao clicar com o mouse
             @Override
             public void mousePressed(MouseEvent e) {
-            	areaG.getGraphics().fillOval(e.getX(), e.getY(), 10, 10);
-            	textPane.setText(textPane.getText() + "\n P"+numPontos+": ("+ e.getX() + ", "+ e.getY()+")");
-            	if(numPontos!=0 && numPontos>0) {
-            		areaG.getGraphics().drawLine((int)pontos.get(numPontos-1).getX(),(int)pontos.get(numPontos-1).getY(), e.getX(), e.getY());
+            	if(permissao) {
+            		areaG.getGraphics().fillOval(e.getX(), e.getY(), 10, 10);
+            		textPane.setText(textPane.getText() + "\n P"+numPontos+": ("+ e.getX() + ", "+ e.getY()+")");
+            		if(numPontos!=0 && numPontos>0) {
+            			areaG.getGraphics().drawLine((int)pontos.get(numPontos-1).getX(),(int)pontos.get(numPontos-1).getY(), e.getX(), e.getY());
+            		}
+            		pontos.add(new Point(e.getX(),e.getY()));
+            		System.out.println("" + pontos);
+            		numPontos+=1;
             	}
-            	pontos.add(new Point(e.getX(),e.getY()));
-            	System.out.println("" + pontos);
-            	numPontos+=1;
-            	
             }
 		});
 		
@@ -164,8 +175,44 @@ public class TelaCurvas extends JFrame {
                     }        
                 }
         );
-
+	/*	
+		btapagaPonto.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                    	permissao = false;
+                    	JOptionPane.showMessageDialog(null, "Clique em um ponto para excluir");
+                    	areaG.addMouseListener(new MouseAdapter() {//acoes ao clicar com o mouse
+                            @Override
+                            public void mousePressed(MouseEvent f) {
+                            	if(numPontos!=0 && numPontos>0) {
+                            		apagaPontos(new Point(f.getX(), f.getY()));
+                            	}           	
+                            }
+                		});
+                    	permissao = true;
+                    }
+                });
+	**/
 	}
+	
+	/**
+	 * Metodo que apaga ponto mais proximo ao que foi clicado pelo usuario
+	 * @param ponto
+	 */
+	
+	private void apagaPontos(Point ponto) {
+		double menorDistancia=0;
+		int indiceMenor = 0;
+		for (int i = 0; i < pontos.size(); i++) {
+			if(ponto.distance(pontos.get(i).getX(), pontos.get(i).getY())<menorDistancia) {
+				menorDistancia = ponto.distance(pontos.get(i).getX(), pontos.get(i).getY());
+				indiceMenor = i;
+			}
+		}
+		pontos.remove(indiceMenor);
+	}
+	
 	public static CurvasDeBezier getCurva() {
 		return curva;
 	}
