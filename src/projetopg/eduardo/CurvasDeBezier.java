@@ -83,7 +83,7 @@ public class CurvasDeBezier {
 				x+=deltas.get(i).getX() * b;
 				y+=deltas.get(i).getY() * b;
 			}
-			norma+=calculaNorma(x, y);
+			norma+=calculaNorma(deltas.size()* x, deltas.size()* y);
 			x=y=0;
 		}
 		System.out.println("" + norma);

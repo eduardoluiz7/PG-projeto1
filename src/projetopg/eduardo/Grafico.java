@@ -58,7 +58,6 @@ public class Grafico extends javax.swing.JFrame{
         cp.setMouseWheelEnabled(true);
         cp.setMouseZoomable(true);
         add(cp);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
         pack();
         setTitle("Gráfico");
 		
