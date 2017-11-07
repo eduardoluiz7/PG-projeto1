@@ -1,8 +1,8 @@
-#Projeto 1 da disciplina de Processamento Gráfico 2017.2 - CIN UFPE
+# Projeto 1 da disciplina de Processamento Gráfico 2017.2 - CIN UFPE
 
-##1.16 Parametrização unitária X Comprimento do arco em curvas de Bézier:
+## 1.16 Parametrização unitária X Comprimento do arco em curvas de Bézier:
 
-###Especificação:
+### Especificação:
 O sistema desenha a curva numa janela e numa outra desenha o gráfico
 da função de parametrização de comprimento do arco aproximado da curva de
 Bézier em termos da parametrização usual entre 0 e 1. Para isso o sistema
@@ -13,7 +13,7 @@ comprimento da curva inteira. O gráfico que deve aparecer na segunda janela
 é a norma acumulada dos vetores em função dos valores de t dividida pelo
 comprimento total (isto como ordenada, e o intervalo [0,1] como abscissa).
 
-###Funcionamento:
+### Funcionamento:
 O Projeto possui 3 Classes: TelaCurvas, CurvasDeBezier e Grafico. É executado através da classe TelaCurvas.
 
 - O usuário desenha os pontos de controle através do mouse, clica no botão "desenhar curva" e o sistema 
